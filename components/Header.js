@@ -14,14 +14,14 @@ export default function Header() {
             <ul class="nav-list">
                 <li><a href="#/">Inicio</a></li>
                 <li><a href="#/about">Nosotros</a></li>
-               <!-- <li><a href="#/login">Ingresar</a></li>
-                <li><a href="#/register">Registrar</a></li> -->
+               <li><a href="#/login">Ingresar</a></li>
+                <li><a href="#/register">Registrar</a></li>
             </ul>
             <ul class="nav-listfull">
                 <li><a href="#/">Inicio</a></li>
                 <li><a href="#/about">Nosotros</a></li>
-               <!-- <li><a href="#/login">Ingresar</a></li>
-                <li><a href="#/register">Registrar</a></li> -->
+             <li><a href="#/login">Ingresar</a></li>
+                <li><a href="#/register">Registrar</a></li>
             </ul>
             </nav>
         </section>
