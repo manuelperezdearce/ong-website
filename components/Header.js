@@ -4,7 +4,7 @@ export default function Header() {
         <header>
         <section>
             <article>
-                <a class="a-logo" href="#/"><img src="../public/onglogo.png" alt="Logo del Sitio ONG"></a>
+                <a class="a-logo" href="#/"><img src="./public/onglogo.png" alt="Logo del Sitio ONG"></a>
                 <h1>Friendly ONG</h1>
             </article>
             <nav>

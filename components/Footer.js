@@ -4,7 +4,7 @@ export default function Footer() {
         <footer class="footer">
             <section class=container-footer>
                 <article>
-                    <a class="a-logo" href="#/"><img src="../public/onglogo.png" alt="Logo de ONG Website"></a>
+                    <a class="a-logo" href="#/"><img src="./public/onglogo.png" alt="Logo de ONG Website"></a>
                     <h1>Friendly ONG</h1>
                 </article>
                 <article>

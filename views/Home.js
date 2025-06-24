@@ -13,13 +13,13 @@ export default function Home() {
         <section-eventos
             id="eventos"
             title="Eventos"
-            dataURL="../mock/eventos.json">
+            dataURL="./mock/eventos.json">
         </section-eventos>
 
         <section-donaciones
             id="donaciones"
             title="Donaciones"
-            dataURL="../mock/donaciones.json">
+            dataURL="./mock/donaciones.json">
         </section-donaciones>
       
         <section-videos id="videos" title="Videos Relacionados" dataURL="./mock/ListaPromociones.json"></section-promociones>
