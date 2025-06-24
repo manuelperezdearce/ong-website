@@ -10,8 +10,8 @@ const body = document.querySelector("#app");
 const routes = {
     "#/": Home,
     "#/about": About,
-    "#/login": Login,
-    "#/register": Register,
+    // "#/login": Login,
+    // "#/register": Register,
 };
 
 export function router() {

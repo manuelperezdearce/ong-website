@@ -1,9 +1,10 @@
 /* FILE: ./components/Header.css */
 header {
+    padding-inline: 16px;
     display: flex;
     align-items: center;
     height: 100px;
-    background-color: red;
+    background-color: white;
     box-shadow: 0px 16px 20px rgb(150, 150, 150);
 
     section {
@@ -25,6 +26,23 @@ header {
             display: flex;
             flex-flow: row wrap;
             list-style: none;
+
+            @media screen and (max-width: 600px) {
+                position: absolute;
+                top: 100px;
+                right: 0;
+                flex-direction: column;
+                align-items: center;
+                background-color: tomato;
+                box-shadow: 0px 16px 20px rgb(150, 150, 150);
+                padding-block: 16px;
+                width: 100%;
+
+                li {
+                    margin: 0.5rem;
+                    padding: 0;
+                }
+            }
         }
 
         nav {
@@ -33,5 +51,42 @@ header {
                 margin-inline: 8px;
             }
         }
+    }
+}
+
+.btn-menu {
+    display: none;
+    background-color: transparent;
+    border: none;
+    color: black;
+    font-size: 2rem;
+    cursor: pointer;
+
+    @media screen and (max-width: 600px) {
+        display: block;
+    }
+}
+
+/* Estilo inicial del menú */
+.nav-list {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilo cuando el menú está abierto */
+.nav-list.open {
+    display: block;
+
+    @media screen and (min-width: 600px) {
+        visibility: hidden;
+
+    }
+}
+
+.nav-listfull {
+    @media screen and (max-width: 600px) {
+        visibility: hidden;
     }
 }

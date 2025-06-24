@@ -1,9 +1,8 @@
 // FILE: components/Main.js
-import "./SectionCards.js";
+import "./SectionProyectos.js";
 import "./SectionMainNav.js";
-import "./Section-tabla.js";
-import "./Section-plato-semana.js";
-import "./Section-promociones.js";
+import "./SectionEventos.js";
+import "./SectionDonaciones.js";
 import "./SectionVideos.js";
 
 class Main extends HTMLElement {

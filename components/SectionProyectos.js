@@ -1,4 +1,4 @@
-import "./MenuCard.js";
+import "./Card.js";
 
 class SectionCards extends HTMLElement {
     constructor() {
@@ -9,7 +9,7 @@ class SectionCards extends HTMLElement {
 
         // Renderizar el título y un contenedor vacío mientras se cargan los datos
         shadow.innerHTML = `
-            <link rel="stylesheet" href="./components/SectionCards.css">
+            <link rel="stylesheet" href="./components/SectionProyectos.css">
             <section class="container">
                 <h4>${title}</h4>
                 <ol class="cards-container">Cargando...</ol>
@@ -29,15 +29,16 @@ class SectionCards extends HTMLElement {
             const data = await response.json();
 
             // Generar las tarjetas dinámicamente
-            const cardsHTML = data.map((menu) => {
+            const cardsHTML = data.map((element) => {
                 return `
                 <li>
-                    <menu-card
-                        img="${menu.img}" 
-                        name="${menu.name}" 
-                        description="${menu.description}" 
-                        price="${menu.price}">
-                    </menu-card>
+                    <project-card
+                        img="${element.image}" 
+                        title="${element.title}" 
+                        description="${element.description}" 
+                        status="${element.status}"
+                        details="${element.details}">
+                    </project-card>
                 </li>
                 `;
             }).join("");
@@ -53,4 +54,4 @@ class SectionCards extends HTMLElement {
     }
 }
 
-customElements.define("section-cards", SectionCards);
+customElements.define("section-proyectos", SectionCards);

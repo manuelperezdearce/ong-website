@@ -8,11 +8,10 @@ class SectionMainNav extends HTMLElement {
         this.innerHTML = `
             <link rel="stylesheet" href="./components/SectionMainNav.css">
             <nav class="nav container">
-                <ul class="nav-list">
-                    <li><a href="#menu">Menu</a></li>
-                    <li><a href="#bebidas">Bebidas</a></li>
-                    <li><a href="#promociones">Promociones</a></li>
-                    <li><a href="#platodelasemana">Plato de la Semana</a></li>
+                <ul class="nav-lis">
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#eventos">Eventos</a></li>
+                    <li><a href="#donaciones">Donaciones</a></li>
                     <li><a href="#videos">Vídeos Relacionados</a></li>
                 </ul>
             </nav>

@@ -1,0 +1,23 @@
+[
+    {
+        "title": "Huertas Urbanas Comunitarias",
+        "description": "Implementamos espacios verdes autosustentables en barrios vulnerables, promoviendo la alimentación saludable y la educación ambiental.",
+        "image": "https://www.mundonuevo.cl/wp-content/uploads/2019/11/huertas_portada-700x350.jpg",
+        "details": "Este proyecto busca crear huertos comunitarios en terrenos desocupados de zonas urbanas. Las comunidades reciben talleres de agricultura orgánica y herramientas básicas para el cultivo, fomentando la soberanía alimentaria y el trabajo colaborativo vecinal.",
+        "status": "En curso"
+    },
+    {
+        "title": "Conecta Mayor",
+        "description": "Brindamos dispositivos móviles y capacitación digital a personas mayores para reducir la brecha digital y el aislamiento social.",
+        "image": "https://cuidadores.unir.net/images/post/tenologiaydependientes.png",
+        "details": "Durante este programa se entregaron tablets y smartphones a más de 1.500 personas mayores, junto con sesiones de alfabetización digital. El impacto incluyó una mejora significativa en la comunicación con sus familias y el acceso a servicios de salud y recreación en línea.",
+        "status": "Finalizado"
+    },
+    {
+        "title": "Reciclaje Inclusivo",
+        "description": "Apoyamos a recicladores de base con infraestructura, formación y alianzas con empresas para mejorar sus condiciones laborales.",
+        "image": "https://www.diariosostenible.cl/files/63ff8c126c297_890x533.webp",
+        "details": "Este proyecto integra a recicladores informales en redes de economía circular mediante la entrega de triciclos de carga, capacitación en separación de residuos, y convenios con municipios y empresas para garantizar un pago justo por su labor ambiental.",
+        "status": "En curso"
+    }
+]

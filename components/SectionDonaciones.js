@@ -1,6 +1,6 @@
-import "./MenuCard.js";
+import "./Card-Donacion.js";
 
-class SectionPromociones extends HTMLElement {
+class SectionCampains extends HTMLElement {
     constructor() {
         super();
         const shadow = this.attachShadow({ mode: "open" });
@@ -9,10 +9,10 @@ class SectionPromociones extends HTMLElement {
 
         // Renderizar el título y un contenedor vacío mientras se cargan los datos
         shadow.innerHTML = `
-            <link rel="stylesheet" href="./components/Section-promociones.css">
+            <link rel="stylesheet" href="./components/SectionProyectos.css">
             <section class="container">
                 <h4>${title}</h4>
-                <ul class="cards-container">Cargando...</ul>
+                <ol class="cards-container">Cargando...</ol>
             </section>
         `;
 
@@ -28,17 +28,21 @@ class SectionPromociones extends HTMLElement {
             }
             const data = await response.json();
 
-            // Generar las tarjetas dinámicamente
-            const cardsHTML = data.map((menu) => {
+            // Generar las tarjetas dinámicamente con los atributos correctos
+            const cardsHTML = data.map((element) => {
                 return `
-                    <li>
-                        <menu-card
-                        img="${menu.img}" 
-                        name="${menu.name}" 
-                        description="${menu.description}" 
-                        price="${menu.price}">
-                        <menu-card>
-                    </li>
+                <li>
+                    <donacion-card
+                        title="${element.title}" 
+                        description="${element.description}" 
+                        goal="${element.goal}"
+                        collected="${element.collected}"
+                        deadline="${element.deadline}"
+                        status="${element.status}"
+                        image="${element.image}"
+                        link="${element.link}">
+                    </donacion-card>
+                </li>
                 `;
             }).join("");
 
@@ -53,4 +57,4 @@ class SectionPromociones extends HTMLElement {
     }
 }
 
-customElements.define("section-promociones", SectionPromociones);
+customElements.define("section-donaciones", SectionCampains);

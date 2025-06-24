@@ -1,0 +1,74 @@
+[
+    {
+        "name": "Feria Solidaria 2025",
+        "date": "07-09-2025",
+        "location": "Parque Quinta Normal, Santiago",
+        "description": "Jornada familiar con música en vivo, talleres sustentables, y venta de productos de emprendedores sociales.",
+        "image": "https://noticias.marcospazconectada.com/wp-content/uploads/2024/09/WhatsApp-Image-2024-09-06-at-10.57.58-1068x1068.jpeg",
+        "details": "Entrada gratuita. Desde las 10:00 a las 18:00 hrs. Zona infantil, foodtrucks y reciclaje."
+    },
+    {
+        "name": "Voluntariado de Invierno",
+        "date": "15-06-2025",
+        "location": "Diversas comunas RM",
+        "description": "Campaña de recolección y entrega de ropa de abrigo para personas en situación de calle.",
+        "image": "https://centrosocialsanjosemaria.org/wp-content/uploads/2015/10/packs-ropa1.jpg",
+        "details": "Se reciben donaciones en puntos habilitados. Horario de 9:00 a 17:00 hrs. Participación voluntaria abierta."
+    },
+    {
+        "name": "Festival de Reciclaje",
+        "date": "10-08-2025",
+        "location": "Plaza de Armas, Valparaíso",
+        "description": "Evento abierto con charlas sobre reciclaje, stands educativos y concursos para niños.",
+        "image": "https://municiudadnueva.gob.pe/img/news/163638037500a.jpg",
+        "details": "Actividades desde las 11:00 hrs. Trae tus residuos reciclables para participar en premios."
+    },
+    {
+        "name": "Carrera por el Agua",
+        "date": "01-09-2025",
+        "location": "Parque Metropolitano, Santiago",
+        "description": "5K recreativa para concientizar sobre el uso responsable del agua, con inscripción solidaria.",
+        "image": "https://hips.hearstapps.com/hmg-prod/images/carlos-primera-maraton-londres-662a27d5ce12c.jpg?crop=0.553xw:0.982xh;0.243xw,0&resize=1120:*",
+        "details": "Inscripción vía sitio web. Cupos limitados. Kit de corredor y premiación simbólica al final."
+    },
+    {
+        "name": "Taller de Compostaje",
+        "date": "30-05-2025",
+        "location": "Centro Comunitario La Reina",
+        "description": "Aprende a compostar en casa con técnicas simples y materiales reutilizables.",
+        "image": "https://aldeaencuentro.cl/wp-content/uploads/2018/05/COMPOSTAJE.jpg",
+        "details": "Cupos limitados. Incluye materiales. Inscripción gratuita previa en línea."
+    },
+    {
+        "name": "Cine Verde al Aire Libre",
+        "date": "22-11-2025",
+        "location": "Parque Forestal, Santiago",
+        "description": "Proyección de documentales ambientales, con foodtrucks y zona de picnic.",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg19gblKWYOKokcDvDW7XuCt-CU6hFr4XVWg&s",
+        "details": "Películas desde las 19:00 hrs. Se recomienda traer mantas o sillas plegables."
+    },
+    {
+        "name": "Día del Voluntario",
+        "date": "05-12-2025",
+        "location": "Casa Central ONG Friendly",
+        "description": "Celebración y reconocimiento a nuestros voluntarios con actividades, premios y testimonios.",
+        "image": "https://scout.es/wp-content/uploads/2023/12/Dia-del-Voluntariado-2-1030x621.jpg",
+        "details": "Evento interno para voluntarios registrados. Confirmar asistencia con anticipación."
+    },
+    {
+        "name": "Reforestación Nativa",
+        "date": "17-10-2025",
+        "location": "Bosque Panul, La Florida",
+        "description": "Jornada de plantación de árboles nativos con la comunidad escolar local.",
+        "image": "https://www.cualestuhuella.cl/files/601abb8e4c0e4_890x533.jpg",
+        "details": "Punto de encuentro a las 8:30 hrs. Llevar ropa cómoda y agua. Se entregarán herramientas."
+    },
+    {
+        "name": "Campaña Digital 'Adopta un Árbol'",
+        "date": "25-09-2025",
+        "location": "Online",
+        "description": "Plataforma interactiva donde cada donación se traduce en la plantación de un árbol con seguimiento geolocalizado.",
+        "image": "https://www.cerronavia.cl/wp-content/uploads/2021/04/arbol-luchador_portada.jpg",
+        "details": "Disponible 24/7 en nuestro sitio web. Recibe tu certificado y accede al mapa de plantaciones."
+    }
+]
