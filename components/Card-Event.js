@@ -7,8 +7,8 @@ class CardEvent extends HTMLElement {
     }
 
     connectedCallback() {
-        // Leer atributos del elemento
-        const img = this.getAttribute("img");
+        // Leer atributos del elemento (corregido: usar "image" en vez de "img")
+        const image = this.getAttribute("image");
         const name = this.getAttribute("name");
         const description = this.getAttribute("description");
         const date = this.getAttribute("date");
@@ -18,8 +18,8 @@ class CardEvent extends HTMLElement {
         // Renderizar el contenido dinámicamente
         this.shadowRoot.innerHTML = `
             <link rel="stylesheet" href="./components/Card.css">
-            <div class="card">
-                <img src="${img}" alt="${name}">
+            <div class="card" style="cursor:pointer;">
+                <img src="${image}" alt="${name}">
                 <div class="card-content">
                     <h3>${name}</h3>
                     <p>${description}</p>
@@ -30,7 +30,7 @@ class CardEvent extends HTMLElement {
                 <div class="modal-content">
                     <span class="close">&times;</span>
                     <h2>${name}</h2>
-                    <img src="${img}" alt="${name}" style="max-width:100%;">
+                    <img src="${image}" alt="${name}" style="max-width:100%;">
                     <p>${description}</p>
                     <p>${details}</p>
                     <p class="price">Fecha: ${date}</p>

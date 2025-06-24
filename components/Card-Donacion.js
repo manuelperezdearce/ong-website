@@ -2,6 +2,9 @@ class CardCampain extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: "open" });
+        this.collected = 0;
+        this.goal = 0;
+        this.goalReached = false;
     }
 
     connectedCallback() {
@@ -9,11 +12,15 @@ class CardCampain extends HTMLElement {
         const img = this.getAttribute("image");
         const name = this.getAttribute("title");
         const description = this.getAttribute("description");
-        const goal = this.getAttribute("goal");
-        const collected = this.getAttribute("collected");
+        const goalStr = this.getAttribute("goal");
+        const collectedStr = this.getAttribute("collected");
         const deadline = this.getAttribute("deadline");
         const status = this.getAttribute("status");
         const link = this.getAttribute("link");
+
+        // Convertir a número para cálculos
+        this.collected = Number(collectedStr.replace(/[^0-9.-]+/g, ""));
+        this.goal = Number(goalStr.replace(/[^0-9.-]+/g, ""));
 
         // Renderizar el contenido dinámicamente
         this.shadowRoot.innerHTML = `
@@ -23,10 +30,14 @@ class CardCampain extends HTMLElement {
                 <div class="card-content">
                     <h3>${name}</h3>
                     <p>${description}</p>
-                    <p><strong>Meta:</strong> ${goal}</p>
-                    <p><strong>Recaudado:</strong> ${collected}</p>
+                    <p><strong>Meta:</strong> ${goalStr}</p>
+                    <p><strong>Recaudado:</strong> <span class="collected-amount">${collectedStr}</span></p>
                     <p><strong>Estado:</strong> ${status}</p>
                     <p class="price">Fecha límite: ${deadline}</p>
+                    <div class="donar-section">
+                        <input type="number" min="1" placeholder="Monto a donar" class="input-donar">
+                        <button class="btn-donar">Donar</button>
+                    </div>
                 </div>
             </div>
             <div class="modal" style="display:none;">
@@ -35,11 +46,14 @@ class CardCampain extends HTMLElement {
                     <h2>${name}</h2>
                     <img src="${img}" alt="${name}" style="max-width:100%;">
                     <p>${description}</p>
-                    <p><strong>Meta:</strong> ${goal}</p>
-                    <p><strong>Recaudado:</strong> ${collected}</p>
+                    <p><strong>Meta:</strong> ${goalStr}</p>
+                    <p><strong>Recaudado:</strong> <span class="collected-amount-modal">${collectedStr}</span></p>
                     <p><strong>Estado:</strong> ${status}</p>
                     <p class="price">Fecha límite: ${deadline}</p>
-                    <a href="${link}" target="_blank" style="display:inline-block;margin-top:1rem;padding:0.5rem 1rem;background:#4caf50;color:#fff;border-radius:4px;text-decoration:none;">Donar</a>
+                    <div class="donar-section">
+                        <input type="number" min="1" placeholder="Monto a donar" class="input-donar-modal">
+                        <button class="btn-donar-modal">Donar</button>
+                    </div>
                 </div>
             </div>
             <style>
@@ -65,6 +79,23 @@ class CardCampain extends HTMLElement {
                     font-size: 2rem;
                     cursor: pointer;
                 }
+                .donar-section {
+                    margin-top: 1rem;
+                    display: flex;
+                    gap: 0.5rem;
+                }
+                .donar-section input[type="number"] {
+                    width: 100px;
+                    padding: 0.3rem;
+                }
+                .btn-donar, .btn-donar-modal {
+                    background: #4caf50;
+                    color: #fff;
+                    border: none;
+                    border-radius: 4px;
+                    padding: 0.5rem 1rem;
+                    cursor: pointer;
+                }
             </style>
         `;
 
@@ -81,10 +112,53 @@ class CardCampain extends HTMLElement {
             e.stopPropagation();
         });
 
-        // Cerrar modal al hacer click fuera del contenido
         modal.addEventListener('click', (e) => {
             if (e.target === modal) modal.style.display = 'none';
         });
+
+        // Usar solo el input y botón de la card principal
+        const inputDonar = this.shadowRoot.querySelector('.input-donar');
+        const btnDonar = this.shadowRoot.querySelector('.btn-donar');
+        const collectedSpan = this.shadowRoot.querySelector('.collected-amount');
+        const collectedSpanModal = this.shadowRoot.querySelector('.collected-amount-modal');
+        const inputDonarModal = this.shadowRoot.querySelector('.input-donar-modal');
+
+        // Sincronizar input de modal con el principal
+        inputDonar.addEventListener('input', () => {
+            inputDonarModal.value = inputDonar.value;
+        });
+        inputDonarModal.addEventListener('input', () => {
+            inputDonar.value = inputDonarModal.value;
+        });
+
+        // Un solo botón para donar (el de la card principal)
+        btnDonar.addEventListener('click', () => {
+            const monto = Number(inputDonar.value);
+            if (monto > 0) {
+                this.collected += monto;
+                collectedSpan.textContent = `$${this.collected.toLocaleString("es-CL")}`;
+                collectedSpanModal.textContent = `$${this.collected.toLocaleString("es-CL")}`;
+                inputDonar.value = "";
+                inputDonarModal.value = "";
+                this.checkGoal();
+            }
+        });
+
+        // El botón de la modal solo cierra la modal y dispara el botón principal
+        const btnDonarModal = this.shadowRoot.querySelector('.btn-donar-modal');
+        btnDonarModal.addEventListener('click', () => {
+            btnDonar.click();
+            modal.style.display = 'none';
+        });
+    }
+
+    checkGoal() {
+        if (this.collected >= this.goal) {
+            if (!this.goalReached) {
+                this.goalReached = true;
+                alert("¡Meta alcanzada! Gracias por tu aporte.");
+            }
+        }
     }
 }
 

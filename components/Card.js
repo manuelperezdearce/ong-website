@@ -1,6 +1,6 @@
 // FILE: components/Card.js
 
-class Card extends HTMLElement {
+class ProjectCard extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: "open" });
@@ -8,7 +8,7 @@ class Card extends HTMLElement {
 
     connectedCallback() {
         // Leer atributos del elemento
-        const img = this.getAttribute("img");
+        const image = this.getAttribute("image");
         const title = this.getAttribute("title");
         const description = this.getAttribute("description");
         const status = this.getAttribute("status");
@@ -17,8 +17,8 @@ class Card extends HTMLElement {
         // Renderizar el contenido dinámicamente
         this.shadowRoot.innerHTML = `
             <link rel="stylesheet" href="./components/Card.css">
-            <div class="card">
-                <img src="${img}" alt="${title}">
+            <div class="card" style="cursor:pointer;">
+                <img src="${image}" alt="${title}">
                 <div class="card-content">
                     <h3>${title}</h3>
                     <p>${description}</p>
@@ -29,7 +29,7 @@ class Card extends HTMLElement {
                 <div class="modal-content">
                     <span class="close">&times;</span>
                     <h2>${title}</h2>
-                    <img src="${img}" alt="${title}" style="max-width:100%;">
+                    <img src="${image}" alt="${title}" style="max-width:100%;">
                     <p>${description}</p>
                     <p>${details}</p>
                     <p class="price">Estado: ${status}</p>
@@ -81,4 +81,4 @@ class Card extends HTMLElement {
     }
 }
 
-customElements.define("project-card", Card);
+customElements.define("project-card", ProjectCard);
